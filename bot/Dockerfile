@@ -1,10 +1,12 @@
 FROM python:3.9-slim-buster
 
-WORKDIR /app
+WORKDIR /code
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./bot/requirements.txt /code/requirements.txt
+COPY ./app/.env /code/.env
 
-COPY . .
+RUN pip install --no-cache-dir -r /bot/requirements.txt
 
-CMD ["python", "bot.py"]
+COPY ./bot /code/bot
+
+CMD ["python", "bot/bot.py"]

@@ -1,0 +1,10 @@
+[
+    {
+      "name": "production",
+      "base_url": "http://95.174.95.254:5000"
+    },
+    {
+      "name": "test",
+      "base_url": "http://37.230.192.192:5000"
+    }
+  ]
